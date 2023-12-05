@@ -79,11 +79,6 @@ def status():
         "author": "Sebastian Rojas Osinaga"
     }
 
-
-"""
-    if not data.text.strip():
-        raise HTTPException(status_code=400, detail="Text input cannot be empty")
-"""
 @app.post("/sentiment-analysis")
 async def permorm_sentiment_analysis(data: SentimentAnalysisInput, sentiment_analysis: SentimentAnalyzer = Depends(get_sentiment_analysis)):
     if not data.text.strip():
@@ -119,3 +114,6 @@ async def permorm_text_analysis(data: TextAnalysisInput, sentiment_analysis: Sen
 def get_reports(reports: Reports = Depends(get_reports)):
     report = reports.generate_report()
     return Response(content=report, media_type="text/csv")    
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", reload=True)
