@@ -19,14 +19,14 @@ Muy Positivo
 ### GET /status
 Descripción: Verifica el estado del servicio.
 Respuesta: Información sobre el estado del servicio, los modelos utilizados y el autor del proyecto.
-POST /sentiment-analysis
+### POST /sentiment-analysis
 Descripción: Realiza el análisis de sentimiento de una frase.
 Entrada: Frase en formato de texto.
 Salida:
 Etiqueta de sentimiento.
 Puntaje de confianza.
 Tiempo de procesamiento.
-POST /text-analysis
+### POST /text-analysis
 Descripción: Realiza un análisis completo de la frase.
 Entrada: Frase en formato de texto.
 Salida:
@@ -37,9 +37,9 @@ Etiquetado de partes de la oración.
 Entidades nombradas.
 Incrustaciones de palabras.
 Tiempo de procesamiento.
-GET /reports
+### GET /reports
 Descripción: Obtiene un informe en formato CSV.
 Salida: Descarga un informe detallado de todas las inferencias realizadas.
-Modelos Utilizados
+## Modelos Utilizados
 Análisis de Texto: Utiliza el modelo es_core_news_sm de la biblioteca SpaCy para el análisis de texto.
 Análisis de Sentimientos: Utiliza el modelo karina-aquino/spanish-sentiment-model de la biblioteca Transformers para el análisis de sentimientos en frases en español.
